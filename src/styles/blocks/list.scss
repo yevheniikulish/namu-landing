@@ -1,0 +1,20 @@
+.list {
+  position: absolute;
+  top: 30px;
+  display: none;
+  width: 100%;
+  text-align: center;
+  background-color: #232f2f;
+
+  &__item {
+    transition: background-color $transition;
+
+    &:hover {
+      background-color: $hover-green;
+    }
+  }
+
+  &__language {
+    color: $white;
+  }
+}

@@ -30,6 +30,7 @@
 
   &__language-container {
     display: none;
+    position: relative;
 
     &--menu {
       display: flex;
@@ -50,26 +51,17 @@
   &__language {
     display: flex;
     align-items: center;
-
-    &--eng {
-      display: none;
-      position: absolute;
-      transform: translateY(100%);
-    }
   }
 
   &__language-abr {
     margin-right: 2px;
     color: $white;
-
-    &--eng {
-      margin-right: 0;
-    }
   }
 
   &__language-arrow {
     width: 10px;
     height: 7px;
+    background: url("../images/icon/arrow-down.svg") no-repeat center;
   }
 
   &__burger {
