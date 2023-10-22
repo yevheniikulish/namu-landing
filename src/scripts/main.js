@@ -18,12 +18,13 @@ window.addEventListener('hashchange', () => {
 });
 
 const languageSelector = document.querySelector('.top__language-container');
+const menuSelector = document.querySelector('.top__language-container--menu');
 
-const handleLanguageSelector = (event) => {
+const handleLanguageSelector = (selector) => (event) => {
   event.preventDefault();
 
-  const list = languageSelector.querySelector('ul');
-  const selectorButton = languageSelector.querySelector('.top__language');
+  const list = selector.querySelector('ul');
+  const selectorButton = selector.querySelector('.top__language');
 
   list.style.display = 'block';
 
@@ -32,7 +33,7 @@ const handleLanguageSelector = (event) => {
 
     e.stopPropagation();
 
-    languageSelector.firstElementChild.firstElementChild
+    selector.firstElementChild.firstElementChild
       .textContent = chosenLanguage.textContent.trim();
 
     list.style.display = 'none';
@@ -52,4 +53,8 @@ const handleLanguageSelector = (event) => {
   selectorButton.addEventListener('click', closeSelector);
 };
 
-languageSelector.addEventListener('click', handleLanguageSelector);
+languageSelector.addEventListener(
+  'click',
+  handleLanguageSelector(languageSelector),
+);
+menuSelector.addEventListener('click', handleLanguageSelector(menuSelector));
