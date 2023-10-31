@@ -24,12 +24,15 @@
   }
 
   &__link {
+    box-sizing: border-box;
     width: max-content;
     font-family: $font;
     font-weight: $title-weight;
     font-size: $small;
     line-height: 30px;
     color: $white;
+    border-bottom: 1px solid #f1f5f400;
+    transition: all $transition;
 
     @include tablet {
       font-size: $big;
@@ -44,7 +47,7 @@
     }
 
     &:hover {
-      text-decoration: underline;
+      border-bottom: 1px solid $white;
     }
   }
 

@@ -51,7 +51,11 @@
   }
 
   &__link {
+    box-sizing: border-box;
+    width: fit-content;
     color: inherit;
+    border-bottom: 1px solid #f1f5f400;
+    transition: all $transition;
 
     &--tel {
       display: inline-block;
@@ -66,7 +70,7 @@
     }
 
     &:hover {
-      text-decoration: underline;
+      border-bottom: 1px solid $white;
     }
   }
 
